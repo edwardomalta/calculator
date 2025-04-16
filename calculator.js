@@ -14,3 +14,25 @@ function divide(x, y) {
     return x / y;
 }
 
+let firstNumber;
+let operator;
+let secondNumber;
+
+function operate(fNumb, operator, sNumb) {
+    switch (operator){
+        case ("+"):
+            return add(fNumb, sNumb);
+            break;
+        case ("-"):
+            return subtract(fNumb, sNumb);
+            break;
+        case ("*"):
+            return multiply(fNumb, sNumb);
+            break;
+        case ("/"):
+            return divide(fNumb, sNumb);
+            break;
+        default:
+            return "Oh Oh";
+    }
+}
