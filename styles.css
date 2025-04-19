@@ -4,7 +4,7 @@
     --display-color: aqua;
     --btns-container-color: rgba(127, 255, 212, 0.541);
     --normal-button-color: rgb(44, 38, 38);
-    --contrast-button-color: ;
+    --contrast-button-color: green;
 }
 
 .body {
@@ -80,4 +80,8 @@
 
 .double-width {
     flex-grow: 2;
+}
+
+.contrast-button {
+    background-color: var(--contrast-button-color);
 }
