@@ -51,7 +51,13 @@ clearBtn.addEventListener("click", e => {display.textContent = 0;});
 const numberButtons = [...document.querySelectorAll(".numb")];
 console.table(numberButtons);
 // set a function that concatenates its textContent
+let before = display.style.backgroundColor;
 function updateDisplay(number) {
+    if (display.textContent.length > 9) {
+        display.style.backgroundColor = "red";
+        setTimeout(()=> {display.style.backgroundColor = before;}, 300);
+        return;
+    }
     if (display.textContent === "0") {
         display.textContent = number;
     } else display.textContent += number;
