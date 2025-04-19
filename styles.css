@@ -23,19 +23,22 @@ body {
 
 .calculator {
     margin: auto;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     background-color: var(--calc-color);
     width: 412px;
     height: 521px;
     display: flex;
     flex-direction: column;
     gap: 18px;
+    border-radius: 2em;
+    padding-top: 10px;
+    box-shadow: 10px 7px red;
 }
 
 .display {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25px;
+    margin-top: 10px;
     width: 75%;
     height: 59px;
     background-color: var(--display-color);
