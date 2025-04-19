@@ -75,6 +75,14 @@ body {
     display: flex;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
+    cursor: pointer;
+    border: solid var(--calc-color) 2px;
+    &:hover {
+        border: solid var(--default-font-color) 2px;
+    }
+    &:active {
+        background-color: #888585;
+    }
 }
 
 .b-text {
