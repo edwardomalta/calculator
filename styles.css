@@ -66,3 +66,7 @@
     margin: auto;
     font-size: 50px;
 }
+
+.double-width {
+    flex-grow: 2;
+}
