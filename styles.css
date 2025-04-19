@@ -8,8 +8,9 @@
     --display-text-color: #443c3b;
 }
 
-.body {
-    background-color: rgb(243, 200, 147);
+body {
+    background-color: rgb(221, 192, 156);
+    font-family: Helvetica, Sans-Serif;
 }
 
 .container {
