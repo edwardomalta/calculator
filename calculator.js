@@ -46,3 +46,19 @@ display.textContent = 0;
 const clearBtn = document.querySelector("#clear");
 
 clearBtn.addEventListener("click", e => {display.textContent = 0;});
+
+// get all the numbers
+const numberButtons = [...document.querySelectorAll(".numb")];
+console.table(numberButtons);
+// set a function that concatenates its textContent
+function updateDisplay(number) {
+    if (display.textContent === "0") {
+        display.textContent = number;
+    } else display.textContent += number;
+}
+numberButtons.forEach(button => {
+    button.addEventListener("click", e=> {
+        updateDisplay(button.textContent);
+    });
+});
+// update it to the display
