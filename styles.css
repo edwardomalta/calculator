@@ -1,3 +1,7 @@
+:root{
+    --calc-color: rgb(41, 41, 161);
+}
+
 .body {
     background-color: rgb(243, 200, 147);
 }
@@ -6,11 +10,14 @@
     display: flex;
     margin: 60px;
 }
+.container p {
+    color: blueviolet;
+}
 
 .calculator {
     margin: auto;
     padding-bottom: 25px;
-    background-color: rgb(41, 41, 161);
+    background-color: var(--calc-color);
     width: 460px;
     height: 450px;
     display: flex;
