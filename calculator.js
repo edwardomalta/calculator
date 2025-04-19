@@ -36,3 +36,13 @@ function operate(fNumb, operator, sNumb) {
             return "Oh Oh";
     }
 }
+
+// the display
+const display = document.querySelector("#display-text");
+
+display.textContent = 0;
+
+// the clear button
+const clearBtn = document.querySelector("#clear");
+
+clearBtn.addEventListener("click", e => {display.textContent = 0;});
