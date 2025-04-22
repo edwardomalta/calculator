@@ -60,6 +60,9 @@ operatorButtons.forEach(button => {
         operatorIsSet = true;
         console.log(operator);
         console.log(operatorIsSet);
+        firstNumber = Number(array1.join(""));
+        array1 = [];
+        console.log("First Number: " + firstNumber);
     });
 });
 
@@ -72,7 +75,14 @@ operatorButtons.forEach(button => {
 // that fills an array, the array max length would be 10
 // this array must be updated to the display.
 let array1 = [];
-let array2 = [];
 numberButtons.forEach(button => {
-    button.addEventListener("click", ()=>{});
+    button.addEventListener("click", ()=>{
+        updateDisplay(button.textContent);
+    });
 });
+
+function updateDisplay(number) {
+    if (array1.length > 10) return;
+    array1.push(number);
+    display.textContent = array1.join("");
+}
