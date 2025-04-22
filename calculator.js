@@ -15,8 +15,9 @@ function divide(x, y) {
 }
 
 let firstNumber;
-let operator;
+let operator = "";
 let secondNumber;
+let operatorIsSet = false;
 
 function operate(fNumb, operator, sNumb) {
     switch (operator){
@@ -50,21 +51,48 @@ clearBtn.addEventListener("click", e => {display.textContent = 0;});
 // get all the numbers
 const numberButtons = [...document.querySelectorAll(".numb")];
 console.table(numberButtons);
+// get all operators
+const operatorButtons = [...document.querySelectorAll(".operator")]
+
+operatorButtons.forEach(button => {
+    button.addEventListener("click", e=> {
+        operator = button.textContent;
+        operatorIsSet = true;
+        console.log(operator);
+        console.log(operatorIsSet);
+    });
+});
 // set a function that concatenates its textContent
 let before = display.style.backgroundColor;
 function updateDisplay(number) {
     if (display.textContent.length > 9) {
         display.style.backgroundColor = "red";
-        setTimeout(()=> {display.style.backgroundColor = before;}, 300);
+        setTimeout(()=> {display.style.backgroundColor = before;}, 250);
         return;
     }
     if (display.textContent === "0") {
         display.textContent = number;
-    } else display.textContent += number;
+        updateNumber(display.textContent);
+    } else if (operatorIsSet) {
+        display.textContent = number;
+        updateNumber(display.textContent);
+    } else {
+        display.textContent += number;
+        updateNumber(display.textContent);
+    }
 }
 numberButtons.forEach(button => {
     button.addEventListener("click", e=> {
         updateDisplay(button.textContent);
     });
 });
-// update it to the display
+
+function updateNumber(nmbr) {
+    if (operatorIsSet) {
+        secondNumber = Number(nmbr);
+        console.log(`Second Number updated: ${secondNumber}`)
+        return;
+    }
+    firstNumber = Number(nmbr);
+    console.log(`First Number updated: ${firstNumber}`)
+}
