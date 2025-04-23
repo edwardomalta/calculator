@@ -27,7 +27,7 @@ function operate(fNumb, operator, sNumb) {
         case ("-"):
             return subtract(fNumb, sNumb);
             break;
-        case ("*"):
+        case ("x"):
             return multiply(fNumb, sNumb);
             break;
         case ("/"):
@@ -86,3 +86,13 @@ function updateDisplay(number) {
     array1.push(number);
     display.textContent = array1.join("");
 }
+
+const equalBtn = document.querySelector(".equal");
+equalBtn.addEventListener("click", ()=> {
+    secondNumber = array1.join("");
+    console.log(secondNumber);
+    result = operate(firstNumber, operator, secondNumber);
+    display.textContent = result;
+    array1 = [];
+    operatorIsSet = false;
+});
