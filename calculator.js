@@ -66,14 +66,7 @@ operatorButtons.forEach(button => {
     });
 });
 
-// I need to display the number
-// Wen a button is pressed it must display it.
-// how could I do that?
-// Display is waiting you for enter a number.
-// it says: 0
-// you enter a number by pressing a button
-// that fills an array, the array max length would be 10
-// this array must be updated to the display.
+
 let array1 = [];
 numberButtons.forEach(button => {
     button.addEventListener("click", ()=>{
