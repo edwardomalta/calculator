@@ -1,5 +1,5 @@
 function add(x, y) {
-    return x + y;
+    return Number(x) + Number(y);
 }
 
 function subtract(x, y) {
@@ -18,6 +18,7 @@ let firstNumber;
 let operator = "";
 let secondNumber;
 let operatorIsSet = false;
+let firstNumberIsSet =false;
 
 function operate(fNumb, operator, sNumb) {
     switch (operator){
@@ -49,6 +50,9 @@ const clearBtn = document.querySelector("#clear");
 clearBtn.addEventListener("click", e => {
     display.textContent = 0;
     array1 = [];
+    firstNumber = "";
+    operatorIsSet = false;
+    firstNumberIsSet = false;
 });
 
 // get all the numbers
@@ -59,16 +63,19 @@ const operatorButtons = [...document.querySelectorAll(".operator")]
 
 operatorButtons.forEach(button => {
     button.addEventListener("click", e=> {
-        operator = button.textContent;
         if (operatorIsSet) {
             evaluate(true);
+            operator = button.textContent;
             return;
         }
+        operator = button.textContent;
         operatorIsSet = true;
         console.log(operator);
         console.log(operatorIsSet);
-        firstNumber = Number(array1.join(""));
-        array1 = [];
+        if (typeof firstNumber !== 'number' || isNaN(firstNumber)) {
+            firstNumber = Number(array1.join(""));
+            array1 = [];
+        }
         console.log("First Number: " + firstNumber);
     });
 });
@@ -96,10 +103,12 @@ function evaluate(fromOperator=false) {
         operatorIsSet = true;
         firstNumber = result;
         array1 = [];
-    } else {
-        operatorIsSet = false;
-        array1 = [];
-    }
+    } 
+    operatorIsSet = false;
+    firstNumber = result;
+    firstNumberIsSet = true;
+    array1 = [];
+    console.log("First number: " + firstNumber)
 }
 
 const equalBtn = document.querySelector(".equal");

@@ -13,3 +13,9 @@ Lets also practice with branchs on git.
 So the UI came this way and is not exactly as the image before, but hey, it looks good to me right now.
 
 Then I am going to create the functions that make things happen in the display.
+
+### Fixing:
+
+Big problem: it concatenates and does not evaluate
+1 + 2 = 3, then if I push + X and press = 3X
+
