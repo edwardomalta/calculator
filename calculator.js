@@ -72,11 +72,7 @@ operatorButtons.forEach(button => {
     button.addEventListener("click", e=> {
         if (operatorIsSet) {
             evaluate(true);
-<<<<<<< HEAD
-            operator = button.textContent;
-=======
             operator = button.textContent;    
->>>>>>> fix
             return;
         }
         operator = button.textContent;
