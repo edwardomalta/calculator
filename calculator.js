@@ -50,16 +50,10 @@ const clearBtn = document.querySelector("#clear");
 clearBtn.addEventListener("click", e => {
     display.textContent = 0;
     array1 = [];
-<<<<<<< HEAD
     firstNumber = "";
-    operatorIsSet = false;
-    firstNumberIsSet = false;
-=======
-    firstNumber = 0;
-    secondNumber = 0;
+    secondNumber = "";
     operatorIsSet = false;
     operator = "";
->>>>>>> fix
 });
 
 // get all the numbers
