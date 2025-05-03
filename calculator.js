@@ -104,20 +104,12 @@ function evaluate(fromOperator=false) {
         operatorIsSet = true;
         firstNumber = result;
         array1 = [];
-<<<<<<< HEAD
     } 
     operatorIsSet = false;
     firstNumber = result;
     firstNumberIsSet = true;
     array1 = [];
     console.log("First number: " + firstNumber)
-=======
-    } else {
-        operatorIsSet = false;
-        firstNumber = result;
-        array1 = [];
-    }
->>>>>>> fix
 }
 
 const equalBtn = document.querySelector(".equal");
