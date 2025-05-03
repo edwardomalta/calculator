@@ -50,9 +50,16 @@ const clearBtn = document.querySelector("#clear");
 clearBtn.addEventListener("click", e => {
     display.textContent = 0;
     array1 = [];
+<<<<<<< HEAD
     firstNumber = "";
     operatorIsSet = false;
     firstNumberIsSet = false;
+=======
+    firstNumber = 0;
+    secondNumber = 0;
+    operatorIsSet = false;
+    operator = "";
+>>>>>>> fix
 });
 
 // get all the numbers
@@ -65,7 +72,11 @@ operatorButtons.forEach(button => {
     button.addEventListener("click", e=> {
         if (operatorIsSet) {
             evaluate(true);
+<<<<<<< HEAD
             operator = button.textContent;
+=======
+            operator = button.textContent;    
+>>>>>>> fix
             return;
         }
         operator = button.textContent;
@@ -103,12 +114,20 @@ function evaluate(fromOperator=false) {
         operatorIsSet = true;
         firstNumber = result;
         array1 = [];
+<<<<<<< HEAD
     } 
     operatorIsSet = false;
     firstNumber = result;
     firstNumberIsSet = true;
     array1 = [];
     console.log("First number: " + firstNumber)
+=======
+    } else {
+        operatorIsSet = false;
+        firstNumber = result;
+        array1 = [];
+    }
+>>>>>>> fix
 }
 
 const equalBtn = document.querySelector(".equal");
