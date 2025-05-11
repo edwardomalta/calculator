@@ -76,7 +76,7 @@ operatorButtons.forEach(button => {
         if (typeof firstNumber !== 'number' || isNaN(firstNumber)) {
             firstNumber = Number(array1.join(""));
             array1 = [];
-        }
+        } 
         console.log("First Number: " + firstNumber);
     });
 });
@@ -96,9 +96,18 @@ function updateDisplay(number) {
 }
 
 function evaluate(fromOperator=false) {
+    let myarr2 = [];
+    let r;
     secondNumber = array1.join("");
     console.log(secondNumber);
-    result = operate(firstNumber, operator, secondNumber);
+
+    r = String(operate(firstNumber, operator, secondNumber));
+    myarr2 = r.split("");
+    if (myarr2.length > 10) {
+        result = "error";
+    } else {
+        result = myarr2.join("");
+    }
     display.textContent = result;
     if (fromOperator) {
         operatorIsSet = true;
@@ -110,6 +119,8 @@ function evaluate(fromOperator=false) {
     firstNumberIsSet = true;
     array1 = [];
     console.log("First number: " + firstNumber)
+    console.log("Operator: " + operator);
+    console.log("Second Number: " + secondNumber);
 }
 
 const equalBtn = document.querySelector(".equal");
