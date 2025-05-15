@@ -19,3 +19,12 @@ Then I am going to create the functions that make things happen in the display.
 Big problem: it concatenates and does not evaluate
 1 + 2 = 3, then if I push + X and press = 3X
 
+---
+
+In this time we are trying to addapt the function of all the program
+
+I want to add the prints or in this case "console logs" for knowing what is happening.
+There is the state of receiving the first number.
+then there is the state of receiving the operator.
+there is the state of receiving the second number.
+there is the state of printing the calculation and prepare for new adds.

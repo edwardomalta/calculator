@@ -14,7 +14,7 @@ function divide(x, y) {
     return x / y;
 }
 
-let firstNumber;
+let firstNumber = "";
 let operator = "";
 let secondNumber;
 let operatorIsSet = false;
@@ -62,6 +62,11 @@ const numberButtons = [...document.querySelectorAll(".numb")];
 // get all operators
 const operatorButtons = [...document.querySelectorAll(".operator")]
 
+function updateState() {
+    console.log(`First number: ${firstNumber}`)
+}
+
+// Operator buttons will change the actual state of the program.
 operatorButtons.forEach(button => {
     button.addEventListener("click", e=> {
         if (operatorIsSet) {
@@ -71,28 +76,63 @@ operatorButtons.forEach(button => {
         }
         operator = button.textContent;
         operatorIsSet = true;
-        console.log(operator);
-        console.log(operatorIsSet);
+        setNumber(display.textContent);
+        /*
         if (typeof firstNumber !== 'number' || isNaN(firstNumber)) {
             firstNumber = Number(array1.join(""));
             array1 = [];
         } 
         console.log("First Number: " + firstNumber);
+        */
     });
 });
 
 
 let array1 = [];
+
 numberButtons.forEach(button => {
     button.addEventListener("click", ()=>{
         updateDisplay(button.textContent);
     });
 });
 
+// I need this to be conditioned to the actual state of the calc:
+// Receiving the first number or second number.
+
 function updateDisplay(number) {
     if (array1.length > 10) return;
     array1.push(number);
-    display.textContent = array1.join("");
+    fullNumber = array1.join("");
+    display.textContent = fullNumber;
+    updateNumber(fullNumber);
+    showStatus();
+}
+
+function showStatus() {
+    console.log("FirstNumber: " + firstNumber);
+    console.log("Operator: " + operator);
+    console.log("Second Number: " + secondNumber);
+    //console.log("Result: " + evaluate());
+}
+
+function setNumber(number) {
+    if (firstNumber === "" && !operatorIsSet) {
+        firstNumber = number;
+    } else {
+        secondNumber = number;
+    }
+}
+
+function updateNumber(number) {
+    let varName; 
+    if (firstNumber === "" && !operatorIsSet) {
+        varName = "firstNumber";
+    } else {
+        varName = "secondNumber";
+    }
+    let correspondingNumber = Number(number);
+    console.log("Corresponding number: " + varName);
+    console.log("Value: " + correspondingNumber);
 }
 
 function evaluate(fromOperator=false) {
