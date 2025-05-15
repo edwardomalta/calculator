@@ -69,14 +69,16 @@ function updateState() {
 // Operator buttons will change the actual state of the program.
 operatorButtons.forEach(button => {
     button.addEventListener("click", e=> {
+        /*
         if (operatorIsSet) {
             evaluate(true);
             operator = button.textContent;    
             return;
-        }
+        } */
+        setNumber(display.textContent);
         operator = button.textContent;
         operatorIsSet = true;
-        setNumber(display.textContent);
+        showStatus();
         /*
         if (typeof firstNumber !== 'number' || isNaN(firstNumber)) {
             firstNumber = Number(array1.join(""));
@@ -121,6 +123,7 @@ function setNumber(number) {
     } else {
         secondNumber = number;
     }
+    array1 = [];
 }
 
 function updateNumber(number) {
