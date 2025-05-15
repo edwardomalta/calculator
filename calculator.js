@@ -78,13 +78,6 @@ operatorButtons.forEach(button => {
         operator = button.textContent;
         operatorIsSet = true;
         showStatus();
-        /*
-        if (typeof firstNumber !== 'number' || isNaN(firstNumber)) {
-            firstNumber = Number(array1.join(""));
-            array1 = [];
-        } 
-        console.log("First Number: " + firstNumber);
-        */
     });
 });
 
