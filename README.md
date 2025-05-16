@@ -28,3 +28,9 @@ There is the state of receiving the first number.
 then there is the state of receiving the operator.
 there is the state of receiving the second number.
 there is the state of printing the calculation and prepare for new adds.
+
+---
+
+## Long numbers
+
+You should round answers with long decimals so that they don’t overflow the display.
