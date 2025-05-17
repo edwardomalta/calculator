@@ -143,6 +143,11 @@ function evaluate(fromOperator=false) {
 
     showStatus();
     //console.log(secondNumber);
+    
+    if (!operatorIsSet || secondNumber === "") {
+        console.log("I must not do NOTHING!");
+        return;
+    }
 
     r = String(operate(firstNumber, operator, secondNumber));
     myarr2 = r.split("");
