@@ -130,6 +130,11 @@ function updateNumber(number) {
     console.log("Value: " + correspondingNumber);
 }
 
+function shortNumber(num) {
+    let shortening = Number(num)
+    return shortening.toExponential(4);
+}
+
 function evaluate(fromOperator=false) {
     let myarr2 = [];
     let r;
@@ -139,7 +144,7 @@ function evaluate(fromOperator=false) {
     r = String(operate(firstNumber, operator, secondNumber));
     myarr2 = r.split("");
     if (myarr2.length > 10) {
-        result = "error";
+        result = shortNumber(myarr2.join(""));
     } else {
         result = myarr2.join("");
     }
