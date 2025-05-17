@@ -34,3 +34,8 @@ there is the state of printing the calculation and prepare for new adds.
 ## Long numbers
 
 You should round answers with long decimals so that they don’t overflow the display.
+
+---
+
+## Equal problem
+
