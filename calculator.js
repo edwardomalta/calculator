@@ -69,6 +69,7 @@ function updateState() {
 // Operator buttons will change the actual state of the program.
 operatorButtons.forEach(button => {
     button.addEventListener("click", e=> {
+        secondNumber = "";
         if (operatorIsSet) {
             evaluate(true);
             operator = button.textContent;    
@@ -139,7 +140,9 @@ function evaluate(fromOperator=false) {
     let myarr2 = [];
     let r;
     secondNumber = array1.join("");
-    console.log(secondNumber);
+
+    showStatus();
+    //console.log(secondNumber);
 
     r = String(operate(firstNumber, operator, secondNumber));
     myarr2 = r.split("");
@@ -164,7 +167,6 @@ function evaluate(fromOperator=false) {
     array2 = [];
     secondNumber = "";
     operator = "";
-    showStatus();
 }
 
 const equalBtn = document.querySelector(".equal");
