@@ -18,7 +18,8 @@ let firstNumber = "";
 let operator = "";
 let secondNumber;
 let operatorIsSet = false;
-let firstNumberIsSet =false;
+let firstNumberIsSet = false;
+let resultIsSet = false;
 
 function operate(fNumb, operator, sNumb) {
     switch (operator){
@@ -56,6 +57,7 @@ function clear() {
     secondNumber = "";
     operatorIsSet = false;
     operator = "";
+    resultIsSet = false;
 }
 
 // get all the numbers
@@ -89,6 +91,11 @@ let array1 = [];
 
 numberButtons.forEach(button => {
     button.addEventListener("click", ()=>{
+        console.log("Result is set: " + resultIsSet);
+        console.log("Not op set: " + !operatorIsSet);
+        if (resultIsSet && !operatorIsSet) {
+            clear();
+        }
         updateDisplay(button.textContent);
     });
 });
@@ -182,6 +189,7 @@ function evaluate(fromOperator=false) {
     array2 = [];
     secondNumber = "";
     operator = "";
+    resultIsSet = true;
 }
 
 const equalBtn = document.querySelector(".equal");
