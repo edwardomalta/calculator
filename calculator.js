@@ -47,14 +47,16 @@ display.textContent = 0;
 // the clear button
 const clearBtn = document.querySelector("#clear");
 
-clearBtn.addEventListener("click", e => {
+clearBtn.addEventListener("click", clear);
+
+function clear() {
     display.textContent = 0;
     array1 = [];
     firstNumber = "";
     secondNumber = "";
     operatorIsSet = false;
     operator = "";
-});
+}
 
 // get all the numbers
 const numberButtons = [...document.querySelectorAll(".numb")];
@@ -148,7 +150,7 @@ function evaluate(fromOperator=false) {
         console.log("I must not do NOTHING!");
         return;
     }
-
+    
     r = String(operate(firstNumber, operator, secondNumber));
     myarr2 = r.split("");
     if (myarr2.length > 10) {
@@ -164,6 +166,10 @@ function evaluate(fromOperator=false) {
         secondNumber = "";
         showStatus();
         return;
+    }
+    if (secondNumber && operator === "/") {
+        clear();
+        display.textContent = "Error!!!";
     } 
     operatorIsSet = false;
     firstNumber = result;
