@@ -113,6 +113,9 @@ function showStatus() {
 }
 
 function setNumber(number) {
+    if (number === undefined && array1.length < 0) {
+        number = Number(array1.join(""));
+    }
     if (firstNumber === "" && !operatorIsSet) {
         firstNumber = number;
     } else {
@@ -167,7 +170,8 @@ function evaluate(fromOperator=false) {
         showStatus();
         return;
     }
-    if (secondNumber && operator === "/") {
+    if (secondNumber === "0" && operator === "/") {
+        console.log("Is not cero?")
         clear();
         display.textContent = "Error!!!";
     } 
@@ -182,5 +186,11 @@ function evaluate(fromOperator=false) {
 
 const equalBtn = document.querySelector(".equal");
 equalBtn.addEventListener("click", () => {
+    if(operatorIsSet) {
+        console.log("Vengo por aqui");
+        let number = array1.join("");
+        secondNumber = number;
+        console.log("Number is: " + number);
+    }
     evaluate();
 });
